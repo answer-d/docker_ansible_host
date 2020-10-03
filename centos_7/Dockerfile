@@ -18,7 +18,9 @@ ENV LANG="ja_JP.UTF-8" \
     LC_ALL="ja_JP.UTF-8"
 
 RUN true && \
+    mkdir -p /etc/ansible && \
     echo "[defaults]" > /etc/ansible/ansible.cfg && \
-    echo "host_key_checking = False" >> /etc/ansible/ansible.cfg
+    echo "host_key_checking = False" >> /etc/ansible/ansible.cfg && \
+    true
 
 CMD ["/sbin/init"]
